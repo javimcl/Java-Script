@@ -11,15 +11,23 @@
 <body>
     <script>
 
-        function calcularSuperficie() {
-            var ancho = 10;
-            var alto = 15;
+        function calcularSuperficie(ancho, alto) {
             var resultado = ancho * alto;
-            alert(resultado);
+            return resultado;
 
         }
 
-        calcularSuperficie();
+        function calcularTerreno() {
+            var inputAncho = prompt("Ingrese ancho del terreno en metros");
+            var inputAlto = prompt("Ingrese alto del terreno en metros");
+            var superficieTerreno = calcularSuperficie(inputAncho, inputAlto);
+            alert("Superficie del terreno es: " + superficieTerreno);
+
+        }
+
+        calcularTerreno();
+
+
 
     </script>
 
