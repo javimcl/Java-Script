@@ -15,6 +15,6 @@ function clickBtnCalcular(){
     
 
     var imc = peso / (altura * altura);
-    alert(imc);
+    alert("Su imc es:" + Math.round(imc));
     
 }
