@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nombre</label><input id="txtNombre" type="text">
+    <label>Apellido</label><input id="txtApellido" type="text">
+    <label>Telefono</label><input id="txtTelefono" type="text">
+    <label>Email</label><input id="txtEmail" type="text">
+    <button>Agregar</button><br/>
+
+    <div id="listado">
+
+
+    </div>
+    <script>
+
+        var persona = {
+            "nombre": "Lucas",
+            "apellido": "Lopez",
+            "telefono": 022365214,
+            "email": "pepito@gmail.com",
+            "direccion": "Avenidad siempre viva",
+            "empleo": {
+                "nombre": "Programador",
+                "localidad":"Ecuador"
+            }
+        }
+
+        alert(persona.empleo.nombre);
+        persona.telefono = "No tiene";
+
+        console.log(persona);
+    </script>
+</body>
+</html>
