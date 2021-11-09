@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <label>Nombre</label><input id="txtNombre" type="text">
-    <label>Apellido</label><input id="txtApellido" type="text">
-    <label>Telefono</label><input id="txtTelefono" type="text">
-    <label>Email</label><input id="txtEmail" type="text">
-    <button>Agregar</button><br/>
+    <label>Nombre</label><input id="txtNombre" type="text"><br />
+    <label>Apellido</label><input id="txtApellido" type="text"><br />
+    <label>Telefono</label><input id="txtTelefono" type="text"><br />
+    <label>Email</label><input id="txtEmail" type="text"><br />
+    <button id="btnAgregar">Agregar</button><br />
 
     <div id="listado">
 
 
     </div>
     <script>
+        window.onload = iniciar;
 
-        var persona = {
-            "nombre": "Lucas",
-            "apellido": "Lopez",
-            "telefono": 022365214,
-            "email": "pepito@gmail.com",
-            "direccion": "Avenidad siempre viva",
-            "empleo": {
-                "nombre": "Programador",
-                "localidad":"Ecuador"
-            }
+        var personas = [];
+
+        function iniciar() {
+            var btnAgregar = document.getElementById("btnAgregar");
+            btnAgregar.addEventListener("click", clickBtnAgregar);
         }
 
-        alert(persona.empleo.nombre);
-        persona.telefono = "No tiene";
+        function clickBtnAgregar() {
 
-        console.log(persona);
+            var txtNombre = document.getElementById("txtNombre");
+            var nombre = txtNombre.value;
+            var txtApellido = document.getElementById("txtApellido");
+            var apellido = txtApellido.value;
+            var txtTelefono = document.getElementById("txtTelefono");
+            var telefono = txtTelefono.value;
+            var txtEmail = document.getElementById("txtEmail");
+            var email = txtEmail.value;
+
+            var persona = {
+                "nombre": nombre,
+                "apellido": apellido,
+                "telefono": telefono,
+                "email": email
+            }
+            personas.push(persona);
+            mostrarPersonas();
+
+        }
+
+        function mostrarPersonas() {
+            var listado = document.getElementById("listado");
+            var html = "";
+            for (var persona of personas) {
+                html += persona.nombre + ' ' + persona.apellido + 
+                ' ' + persona.telefono + ' ' + persona.email + "<br/>";
+            }
+            listado.innerHTML = html;
+        }
+
+
     </script>
 </body>
+
 </html>
