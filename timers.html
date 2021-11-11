@@ -19,9 +19,14 @@
         
         //setTimeout(() =>  alert("Tiempo completo"), 3000);
 
-        setInterval(() => {
+        var timer = setInterval(() => {
             alert("Tiempo Cumplido")
         }, 1000);
+        setTimeout(() =>{
+            clearInterval(timer);
+        },10 * 1000)
+        
+
         /*function mostrarMensaje(){
            / alert("Tiempo completo")
         }*/
