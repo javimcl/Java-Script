@@ -14,18 +14,18 @@
     <b>Esta Completo?</b><span id="txtCompleto"></span>
     <script>
 
-        async function cargarJson() {
-          /*  fetch('https://jsonplaceholder.typicode.com/todos/1')
-                .then(response => response.json())
-                .then(jsonCargado);*/
-
-           let respuesta = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-           let json = await respuesta.json();
-           jsonCargado(json);
-
+        async function cargarUrl(url) {
+            let respuesta = await fetch(url);
+            return await respuesta.json();
         }
 
-        function jsonCargado(json) {
+        async function cargarJson() {
+
+            let usuariosJson = await cargarUrl('https://jsonplaceholder.typicode.com/usuarios');
+            
+            let historiaUsuario = await cargarUrl('https://jsonplaceholder.typicode.com/historial/23994');
+
+            let json = await cargarUrl('https://jsonplaceholder.typicode.com/todos/1');
             let spanNombrePost = document.getElementById("txtNombrePost");
             spanNombrePost.innerHTML = json.title;
 
