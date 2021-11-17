@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +10,38 @@
 </head>
 
 <body>
-    <div>
+    <div class="contenedor">
 
         <h1>Estadisticas del COVID19</h1>
-        <b>Fecha</b><input type="date" name="" id="inputFecha"><br/>
+        <b>Fecha</b><input type="date" name="" id="inputFecha"><br />
         <b>Pais</b>
         <select id="selectPais">
-            <option value="spain">España</option>
-            <option value="germany">Alemania</option>
+            <option value="Spain">España</option>
+            <option value="Germany">Alemania</option>
         </select>
-        <br/>
+        <br />
         <button id="btnCargar">Cargar Estadisticas</button>
+        <br />
+        <ul>
+            <li>Confirmados<span id="today_confirmed"></span></li>
+            <li>Muertes <span id="today_deaths"></span></li>
+            <li>Pacientes hospitalizados con síntomas <span id="today_hospitalised_patients_with_symptoms"></span></li>
+            <li>Cuidados intensivos <span id="today_intensive_care"></span></li>
+            <li>Nuevo confirmado <span id="today_new_confirmed"></span></li>
+            <li>Nuevas muertes <span id="today_new_deaths"></span></li>
+            <li>Nuevos pacientes hospitalizados con síntomas <span id="today_new_hospitalised_patients_with_symptoms"></span></li>
+            <li>Nuevos cuidados intensivos <span id="today_new_intensive_care"></span></li>
+            <li>Nuevos casos abiertos <span id="today_new_open_cases"></span></li>
+            <li>Nuevo recuperado <span id="today_new_recovered"></span></li>
+            <li>Nuevos total de pacientes hospitalizados <span id="today_new_total_hospitalised_patients"></span></li>
+            <li>Nasos abiertos <span id="today_open_cases"></span></li>
+            <li>Recuperado <span id="today_recovered"></span></li>
+            <li>Total de pacientes hospitalizados <span id="today_total_hospitalised_patients"></span></li>
+        </ul>
+
     </div>
     <script src="scriptCovid.js">
     </script>
 </body>
+
 </html>
